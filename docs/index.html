@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CreatorMatch · Popularity isn't affinity with your brand</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:1040px;margin:0 auto;padding:20px;color:#0f172a}
+h1{margin:0}.sub{color:#475569;margin:6px 0 16px}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+label{font-size:13px;color:#475569;display:block}input,textarea{font:inherit;padding:8px;border:1px solid #cbd5e1;border-radius:8px;width:100%;box-sizing:border-box}
+button{font:inherit;padding:9px 16px;border-radius:8px;border:1px solid #16a34a;background:#16a34a;color:#fff;cursor:pointer}
+button.alt{background:#fff;color:#0f172a;border-color:#cbd5e1}.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;background:#fef3c7;color:#92400e}
+.badge.live{background:#dcfce7;color:#166534}
+.hero{display:flex;gap:18px;align-items:center;background:#0f172a;color:#fff;padding:18px;border-radius:14px;margin:14px 0}
+.hero .big{font-size:44px;font-weight:800;color:#4ade80;white-space:nowrap}.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}.card{border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px;margin:10px 0}
+table{width:100%;border-collapse:collapse}td,th{padding:5px;border-bottom:1px solid #f1f5f9;text-align:left;font-size:14px}
+.bar{height:7px;background:#f1f5f9;border-radius:4px;width:100%;margin:2px 0}.bar span{display:block;height:7px;border-radius:4px}
+.note{color:#64748b;font-size:13px}.pick{border-color:#16a34a;background:#f0fdf4}.warn{border-color:#f59e0b;background:#fffbeb}small{color:#64748b}
+</style><script src="config.js"></script></head><body>
+<h1>CreatorMatch</h1>
+<p class="sub"><b>Popularity isn't affinity with your brand.</b> Name a brand and the creators (podcasts) you are considering. CreatorMatch compares
+a popularity sort with a sort by what the brand's audience actually loves, from the Qloo taste graph, and explains its least obvious pick with evidence.</p>
+<div id="mode"></div>
+<div class="row" id="liveform" style="display:none">
+ <div style="flex:1;min-width:200px"><label>Brand</label><input id="brand" value="Liquid Death"></div>
+ <div style="flex:2;min-width:260px"><label>Creators you are considering (one per line, max 25)</label><textarea id="creators" rows="5"></textarea></div>
+ <button id="go">Compare</button>
+</div>
+<div class="row" id="recbtns" style="margin-top:8px"></div>
+<div id="out"></div>
+<p class="note">Open source (MIT): <a href="https://github.com/igoreduardoai/creatormatch">github.com/igoreduardoai/creatormatch</a>. Qloo Agentic Hackathon.</p>
+<script>
+const POOL=["Crime Junkie","SmartLess","Call Her Daddy","Armchair Expert with Dax Shepard","The Joe Rogan Experience","Huberman Lab","Rotten Mango","Bad Friends","The Rich Roll Podcast","The Mel Robbins Podcast","KILL TONY","Hot Ones"];
+const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const bar=(v,c)=>`<div class="bar"><span style="width:${Math.max(0,Math.min(100,Math.round(v*100)))}%;background:${c}"></span></div>`;
+const f3=v=>(v??0).toFixed(3);
+function table(rows,title,color,note){return `<div class="card"><h3>${title}</h3><p class="note">${note}</p><table><tr><th>Creator</th><th>Qloo popularity</th><th>Qloo affinity to brand</th></tr>`+
+ rows.map((c,i)=>`<tr><td>${i+1}. ${e(c.name)}</td><td>${f3(c.popularity)}<small> #${c.popularity_rank}</small></td><td>${bar(c.affinity,color)}${f3(c.affinity)}<small> #${c.affinity_rank}</small></td></tr>`).join("")+"</table></div>"}
+function render(r,label){
+ if(r.error) return `<div class="card warn"><b>${e(r.error)}</b></div>`;
+ const x=r.explain,b=r.brand.name,n=r.pool.filter(c=>c.affinity!=null).length;
+ let h=`<div class="hero"><div class="big">${r.overlap} of ${r.qloo_shortlist.length}</div><div>creators are the same when you sort <b>${e(b)}</b>'s list by popularity vs. by what its audience loves (Qloo).<br><b>${e(x.pick)}</b> is #${x.popularity_rank} of ${n} by popularity and #${x.affinity_rank} by audience affinity.</div></div>`;
+ h+=`<div class="cols">${table(r.popularity_shortlist,"Generic pick: sort by popularity","#94a3b8","What a reach-first shortlist looks like.")}${table(r.qloo_shortlist,"CreatorMatch: sort by audience affinity","#16a34a","Qloo: how much this creator's audience over-indexes on the brand.")}</div>`;
+ h+=`<div class="card pick"><h3>Why ${e(x.pick)}? (the non-obvious pick)</h3><p>Of the top ${x.profile_size} movies, TV shows, artists and brands that ${e(b)}'s audience over-indexes on, <b>${x.shared_count}</b> also show up for ${e(x.pick)}'s audience. The strongest shared tastes:</p><ul>`+
+  (x.shared_taste.map(s=>`<li><b>${e(s.name)}</b> <small>(${s.type})</small> · ${e(b)} audience ${f3(s.brand_audience_affinity)} · ${e(x.pick)} audience ${f3(s.creator_audience_affinity)}</li>`).join("")||"<li>none</li>")+"</ul>";
+ if(x.dropped){const d=x.dropped;h+=`<p class="note">For contrast, <b>${e(d.name)}</b> is #${d.popularity_rank} by popularity but #${d.affinity_rank} by affinity (affinity ${f3(d.affinity)}); its audience shares <b>${d.shared_count}</b> of those tastes.</p>`}
+ h+="</div>";
+ if(r.flagged.length) h+=`<div class="card warn"><h3>Needs your review</h3><ul>`+r.flagged.map(c=>`<li>“${e(c.query)}” → Qloo matched <b>${e(c.name||"nothing")}</b> (${c.status}). Not scored; fix the name and rerun.</li>`).join("")+"</ul></div>";
+ h+=`<div class="card"><h3>${e(b)} audience: top tastes (Qloo)</h3><ul>`+r.brand_taste_top.map(t=>`<li>${e(t.name)} <small>(${t.type})</small> ${bar(t.affinity,"#7c3aed")}</li>`).join("")+"</ul></div>";
+ h+=`<div class="card"><h3>Smaller creators outside your list (Qloo discovery)</h3><ul>`+r.discovery.map(d=>`<li>${e(d.name)} · affinity ${f3(d.affinity)} · popularity ${f3(d.popularity)}</li>`).join("")+"</ul></div>";
+ h+=`<div class="card"><h3>Brief DRAFT <small>(${e(r.brief_backend)})</small></h3><p>${e(r.brief)}</p><p class="note">Nothing is sent. A human approves any outreach.</p></div>`;
+ const m=r.metrics;
+ h+=`<details class="card"><summary>Agent trace · ${m.qloo_calls} Qloo calls · ${m.wall_ms} ms · ${label}</summary><ol>`+r.trace.map(t=>`<li><code>${t.step}</code> ${e(t.detail)} <small>${t.t_ms} ms</small></li>`).join("")+
+  `</ol><p class="note">Score = Qloo affinity of the creator to the brand (/v2/insights, filter.type=urn:entity:podcast, signal.interests.entities=brand, filter.results.entities=your list). Popularity is shown, never scored.</p></details>`;
+ return h;}
+const out=document.getElementById("out");
+function ct(iso){return new Date(iso).toLocaleString("en-US",{timeZone:"America/Chicago",dateStyle:"medium",timeStyle:"short"})+" CT"}
+fetch("recorded-run-2026-10-24.json").then(r=>r.json()).then(d=>{
+ const rb=document.getElementById("recbtns");
+ d.runs.forEach((r,i)=>{const bt=document.createElement("button");bt.className="alt";bt.textContent=`Recorded run: ${r.brand.name} (${ct(r.run_at)})`;
+  bt.onclick=()=>out.innerHTML=`<p><span class="badge">Recorded live Qloo run · ${ct(r.run_at)} · not re-queried</span></p>`+render(r,"recorded "+ct(r.run_at));rb.appendChild(bt);if(i==0&&!window.CM_API)bt.click();});
+});
+if(window.CM_API){
+ document.getElementById("liveform").style.display="flex";document.getElementById("creators").value=POOL.join("\n");
+ document.getElementById("mode").innerHTML='<span class="badge live">Live: queries the Qloo API on each run (about 10 s)</span>';
+ document.getElementById("go").onclick=async()=>{out.innerHTML="<p>Running the agent against Qloo…</p>";
+  try{const res=await fetch(window.CM_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({brand:document.getElementById("brand").value,creators:document.getElementById("creators").value.split("\n")})});
+   const r=await res.json();out.innerHTML=`<p><span class="badge live">Live run · ${ct(r.run_at||new Date().toISOString())}</span></p>`+render(r,"live");}catch(err){out.innerHTML=`<div class="card warn">Live backend unreachable (${e(err)}). Use a recorded run below.</div>`}};
+}else{document.getElementById("mode").innerHTML='<span class="badge">Showing a recorded live Qloo run from 24 Oct 2026. The live backend is not connected yet.</span>'}
+</script></body></html>

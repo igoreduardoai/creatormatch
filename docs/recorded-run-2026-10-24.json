@@ -1,0 +1,728 @@
+{
+ "_note": "Recorded live Qloo run, 24 Oct 2026 (America/Chicago). Derived results only (names, scores, ranks); no raw API responses.",
+ "runs": [
+  {
+   "brand_query": "Liquid Death",
+   "run_at": "2026-10-24T17:42:47+00:00",
+   "overlap": 0,
+   "explain": {
+    "pick": "KILL TONY",
+    "affinity": 0.9029,
+    "affinity_rank": 2,
+    "popularity": 0.9504,
+    "popularity_rank": 10,
+    "shared_taste": [
+     {
+      "name": "I Think You Should Leave with Tim Robinson",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9467,
+      "creator_audience_affinity": 0.9445
+     },
+     {
+      "name": "Party Down",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9442,
+      "creator_audience_affinity": 0.9465
+     },
+     {
+      "name": "The Righteous Gemstones",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9325,
+      "creator_audience_affinity": 0.9512
+     },
+     {
+      "name": "Killing It",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9314,
+      "creator_audience_affinity": 0.9516
+     },
+     {
+      "name": "A.P. Bio",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9406,
+      "creator_audience_affinity": 0.9409
+     },
+     {
+      "name": "Baskets",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9377,
+      "creator_audience_affinity": 0.9392
+     }
+    ],
+    "shared_count": 18,
+    "profile_size": 199,
+    "dropped": {
+     "name": "Crime Junkie",
+     "affinity": 0.6929,
+     "affinity_rank": 11,
+     "popularity_rank": 1,
+     "shared_taste": [
+      {
+       "name": "Big Time Adolescence",
+       "type": "movie",
+       "brand_audience_affinity": 0.8779,
+       "creator_audience_affinity": 0.9214
+      },
+      {
+       "name": "The King of Staten Island",
+       "type": "movie",
+       "brand_audience_affinity": 0.883,
+       "creator_audience_affinity": 0.9126
+      },
+      {
+       "name": "The Peanut Butter Falcon",
+       "type": "movie",
+       "brand_audience_affinity": 0.88,
+       "creator_audience_affinity": 0.9129
+      },
+      {
+       "name": "Eighth Grade",
+       "type": "movie",
+       "brand_audience_affinity": 0.868,
+       "creator_audience_affinity": 0.9063
+      },
+      {
+       "name": "Honey Boy",
+       "type": "movie",
+       "brand_audience_affinity": 0.8791,
+       "creator_audience_affinity": 0.8857
+      },
+      {
+       "name": "Waves",
+       "type": "movie",
+       "brand_audience_affinity": 0.8766,
+       "creator_audience_affinity": 0.8878
+      }
+     ],
+     "shared_count": 6
+    }
+   },
+   "discovery": [
+    {
+     "name": "London Real",
+     "affinity": 0.9035,
+     "popularity": 0.898
+    },
+    {
+     "name": "The Mike Dolce Show",
+     "affinity": 0.902,
+     "popularity": 0.8769
+    },
+    {
+     "name": "Big & Hungry",
+     "affinity": 0.8961,
+     "popularity": 0.8451
+    },
+    {
+     "name": "Optimal Performance",
+     "affinity": 0.8902,
+     "popularity": 0.8253
+    },
+    {
+     "name": "Jeremiah wonders...",
+     "affinity": 0.8854,
+     "popularity": 0.898
+    }
+   ],
+   "brand_taste_top": [
+    {
+     "name": "It's Always Sunny in Philadelphia",
+     "affinity": 0.9793,
+     "type": "tv_show"
+    },
+    {
+     "name": "Workaholics",
+     "affinity": 0.9672,
+     "type": "tv_show"
+    },
+    {
+     "name": "Trailer Park Boys",
+     "affinity": 0.9646,
+     "type": "tv_show"
+    },
+    {
+     "name": "Reno 911!",
+     "affinity": 0.957,
+     "type": "tv_show"
+    },
+    {
+     "name": "The Whitest Kids U'Know",
+     "affinity": 0.9542,
+     "type": "tv_show"
+    }
+   ],
+   "brief": "Campaign brief DRAFT for Liquid Death. Lead with what this audience already loves: It's Always Sunny in Philadelphia, Workaholics, Trailer Park Boys. Shortlist (Qloo affinity): The Joe Rogan Experience, KILL TONY, Bad Friends. Angle for KILL TONY: shared love of I Think You Should Leave with Tim Robinson, Party Down. Human review required before any outreach.",
+   "brief_backend": "template",
+   "metrics": {
+    "qloo_calls": 27,
+    "qloo_calls_uncached": 27,
+    "qloo_ms_total": 33547,
+    "wall_ms": 9415
+   },
+   "trace": [
+    {
+     "step": "resolve_brand",
+     "detail": "Liquid Death -> Liquid Death (resolved)",
+     "t_ms": 223
+    },
+    {
+     "step": "resolve_creators",
+     "detail": "11 resolved, 1 flagged for review",
+     "t_ms": 1750
+    },
+    {
+     "step": "score_pool",
+     "detail": "Qloo affinity for 11 creators against Liquid Death",
+     "t_ms": 1986
+    },
+    {
+     "step": "baseline",
+     "detail": "same list sorted by Qloo popularity (reach proxy)",
+     "t_ms": 1986
+    },
+    {
+     "step": "explain_pick",
+     "detail": "KILL TONY: popularity rank 10 -> affinity rank 2",
+     "t_ms": 8951
+    },
+    {
+     "step": "discover",
+     "detail": "5 creators outside the list (popularity <= 0.9)",
+     "t_ms": 9415
+    },
+    {
+     "step": "brief",
+     "detail": "DRAFT (template); nothing is sent",
+     "t_ms": 9415
+    }
+   ],
+   "brand": {
+    "name": "Liquid Death",
+    "status": "resolved"
+   },
+   "pool": [
+    {
+     "query": "Crime Junkie",
+     "name": "Crime Junkie",
+     "status": "resolved",
+     "affinity": 0.6929,
+     "popularity": 0.9999,
+     "affinity_rank": 11,
+     "popularity_rank": 1
+    },
+    {
+     "query": "SmartLess",
+     "name": "SmartLess",
+     "status": "resolved",
+     "affinity": 0.7887,
+     "popularity": 0.9992,
+     "affinity_rank": 8,
+     "popularity_rank": 3
+    },
+    {
+     "query": "Call Her Daddy",
+     "name": "Call Her Daddy",
+     "status": "resolved",
+     "affinity": 0.7966,
+     "popularity": 0.9982,
+     "affinity_rank": 7,
+     "popularity_rank": 4
+    },
+    {
+     "query": "Armchair Expert with Dax Shepard",
+     "name": "Armchair Expert with Dax Shepard",
+     "status": "resolved",
+     "affinity": 0.8092,
+     "popularity": 0.9994,
+     "affinity_rank": 6,
+     "popularity_rank": 2
+    },
+    {
+     "query": "The Joe Rogan Experience",
+     "name": "The Joe Rogan Experience",
+     "status": "resolved",
+     "affinity": 0.918,
+     "popularity": 0.9914,
+     "affinity_rank": 1,
+     "popularity_rank": 5
+    },
+    {
+     "query": "Huberman Lab",
+     "name": "Huberman Lab",
+     "status": "resolved",
+     "affinity": 0.8688,
+     "popularity": 0.9892,
+     "affinity_rank": 4,
+     "popularity_rank": 6
+    },
+    {
+     "query": "Rotten Mango",
+     "name": "Rotten Mango",
+     "status": "resolved",
+     "affinity": 0.7021,
+     "popularity": 0.984,
+     "affinity_rank": 10,
+     "popularity_rank": 7
+    },
+    {
+     "query": "Bad Friends",
+     "name": "Bad Friends",
+     "status": "resolved",
+     "affinity": 0.8845,
+     "popularity": 0.9827,
+     "affinity_rank": 3,
+     "popularity_rank": 8
+    },
+    {
+     "query": "The Rich Roll Podcast",
+     "name": "The Rich Roll Podcast",
+     "status": "resolved",
+     "affinity": 0.8505,
+     "popularity": 0.9808,
+     "affinity_rank": 5,
+     "popularity_rank": 9
+    },
+    {
+     "query": "The Mel Robbins Podcast",
+     "name": "The Mel Robbins Podcast",
+     "status": "resolved",
+     "affinity": 0.7821,
+     "popularity": 0.9385,
+     "affinity_rank": 9,
+     "popularity_rank": 11
+    },
+    {
+     "query": "KILL TONY",
+     "name": "KILL TONY",
+     "status": "resolved",
+     "affinity": 0.9029,
+     "popularity": 0.9504,
+     "affinity_rank": 2,
+     "popularity_rank": 10
+    },
+    {
+     "query": "Hot Ones",
+     "name": "Two Hot Takes",
+     "status": "needs_review",
+     "affinity": null,
+     "popularity": 0.9738246429955579,
+     "affinity_rank": null,
+     "popularity_rank": null
+    }
+   ],
+   "flagged": [
+    {
+     "query": "Hot Ones",
+     "name": "Two Hot Takes",
+     "status": "needs_review",
+     "affinity": null,
+     "popularity": 0.9738246429955579,
+     "affinity_rank": null,
+     "popularity_rank": null
+    }
+   ],
+   "qloo_shortlist": [
+    {
+     "query": "The Joe Rogan Experience",
+     "name": "The Joe Rogan Experience",
+     "status": "resolved",
+     "affinity": 0.918,
+     "popularity": 0.9914,
+     "affinity_rank": 1,
+     "popularity_rank": 5
+    },
+    {
+     "query": "KILL TONY",
+     "name": "KILL TONY",
+     "status": "resolved",
+     "affinity": 0.9029,
+     "popularity": 0.9504,
+     "affinity_rank": 2,
+     "popularity_rank": 10
+    },
+    {
+     "query": "Bad Friends",
+     "name": "Bad Friends",
+     "status": "resolved",
+     "affinity": 0.8845,
+     "popularity": 0.9827,
+     "affinity_rank": 3,
+     "popularity_rank": 8
+    }
+   ],
+   "popularity_shortlist": [
+    {
+     "query": "Crime Junkie",
+     "name": "Crime Junkie",
+     "status": "resolved",
+     "affinity": 0.6929,
+     "popularity": 0.9999,
+     "affinity_rank": 11,
+     "popularity_rank": 1
+    },
+    {
+     "query": "Armchair Expert with Dax Shepard",
+     "name": "Armchair Expert with Dax Shepard",
+     "status": "resolved",
+     "affinity": 0.8092,
+     "popularity": 0.9994,
+     "affinity_rank": 6,
+     "popularity_rank": 2
+    },
+    {
+     "query": "SmartLess",
+     "name": "SmartLess",
+     "status": "resolved",
+     "affinity": 0.7887,
+     "popularity": 0.9992,
+     "affinity_rank": 8,
+     "popularity_rank": 3
+    }
+   ],
+   "source_file": "run-20261024T124247-0500-Liquid-Death.json"
+  },
+  {
+   "brand_query": "Patagonia",
+   "run_at": "2026-10-24T17:43:00+00:00",
+   "overlap": 0,
+   "explain": {
+    "pick": "The Rich Roll Podcast",
+    "affinity": 0.9731,
+    "affinity_rank": 1,
+    "popularity": 0.9808,
+    "popularity_rank": 9,
+    "shared_taste": [
+     {
+      "name": "The Dawn Wall",
+      "type": "movie",
+      "brand_audience_affinity": 0.9617,
+      "creator_audience_affinity": 0.9385
+     },
+     {
+      "name": "Free Solo",
+      "type": "movie",
+      "brand_audience_affinity": 0.9529,
+      "creator_audience_affinity": 0.9346
+     },
+     {
+      "name": "Globe Trekker",
+      "type": "tv_show",
+      "brand_audience_affinity": 0.9415,
+      "creator_audience_affinity": 0.9354
+     },
+     {
+      "name": "Meru",
+      "type": "movie",
+      "brand_audience_affinity": 0.9464,
+      "creator_audience_affinity": 0.919
+     },
+     {
+      "name": "Mountain",
+      "type": "movie",
+      "brand_audience_affinity": 0.9302,
+      "creator_audience_affinity": 0.9202
+     },
+     {
+      "name": "Valley Uprising",
+      "type": "movie",
+      "brand_audience_affinity": 0.9324,
+      "creator_audience_affinity": 0.9106
+     }
+    ],
+    "shared_count": 40,
+    "profile_size": 198,
+    "dropped": {
+     "name": "Crime Junkie",
+     "affinity": 0.6874,
+     "affinity_rank": 10,
+     "popularity_rank": 1,
+     "shared_taste": [],
+     "shared_count": 0
+    }
+   },
+   "discovery": [
+    {
+     "name": "For The Life Of Me",
+     "affinity": 0.9022,
+     "popularity": 0.7763
+    },
+    {
+     "name": "The Plant Yourself Podcast",
+     "affinity": 0.8896,
+     "popularity": 0.8451
+    },
+    {
+     "name": "Approaching the Natural Podcast",
+     "affinity": 0.8809,
+     "popularity": 0.7942
+    },
+    {
+     "name": "Plant Trainers Podcast - Plant Based Nutrition & Fitness",
+     "affinity": 0.8807,
+     "popularity": 0.5864
+    },
+    {
+     "name": "Eat For The Planet with Nil Zacharias",
+     "affinity": 0.8804,
+     "popularity": 0.5804
+    }
+   ],
+   "brand_taste_top": [
+    {
+     "name": "Expedition Unknown",
+     "affinity": 0.9793,
+     "type": "tv_show"
+    },
+    {
+     "name": "Recreational Equipment Inc",
+     "affinity": 0.9706,
+     "type": "brand"
+    },
+    {
+     "name": "Bahamas",
+     "affinity": 0.9705,
+     "type": "artist"
+    },
+    {
+     "name": "The Curse of Oak Island",
+     "affinity": 0.9671,
+     "type": "tv_show"
+    },
+    {
+     "name": "The Head and the Heart",
+     "affinity": 0.9671,
+     "type": "artist"
+    }
+   ],
+   "brief": "Campaign brief DRAFT for Patagonia. Lead with what this audience already loves: Expedition Unknown, Recreational Equipment Inc, Bahamas. Shortlist (Qloo affinity): The Rich Roll Podcast, Huberman Lab, The Joe Rogan Experience. Angle for The Rich Roll Podcast: shared love of The Dawn Wall, Free Solo. Human review required before any outreach.",
+   "brief_backend": "template",
+   "metrics": {
+    "qloo_calls": 27,
+    "qloo_calls_uncached": 27,
+    "qloo_ms_total": 35417,
+    "wall_ms": 9521
+   },
+   "trace": [
+    {
+     "step": "resolve_brand",
+     "detail": "Patagonia -> Patagonia (resolved)",
+     "t_ms": 281
+    },
+    {
+     "step": "resolve_creators",
+     "detail": "11 resolved, 1 flagged for review",
+     "t_ms": 1878
+    },
+    {
+     "step": "score_pool",
+     "detail": "Qloo affinity for 11 creators against Patagonia",
+     "t_ms": 2104
+    },
+    {
+     "step": "baseline",
+     "detail": "same list sorted by Qloo popularity (reach proxy)",
+     "t_ms": 2104
+    },
+    {
+     "step": "explain_pick",
+     "detail": "The Rich Roll Podcast: popularity rank 9 -> affinity rank 1",
+     "t_ms": 9029
+    },
+    {
+     "step": "discover",
+     "detail": "5 creators outside the list (popularity <= 0.9)",
+     "t_ms": 9520
+    },
+    {
+     "step": "brief",
+     "detail": "DRAFT (template); nothing is sent",
+     "t_ms": 9520
+    }
+   ],
+   "brand": {
+    "name": "Patagonia",
+    "status": "resolved"
+   },
+   "pool": [
+    {
+     "query": "Crime Junkie",
+     "name": "Crime Junkie",
+     "status": "resolved",
+     "affinity": 0.6874,
+     "popularity": 0.9999,
+     "affinity_rank": 10,
+     "popularity_rank": 1
+    },
+    {
+     "query": "SmartLess",
+     "name": "SmartLess",
+     "status": "resolved",
+     "affinity": 0.7663,
+     "popularity": 0.9992,
+     "affinity_rank": 8,
+     "popularity_rank": 3
+    },
+    {
+     "query": "Call Her Daddy",
+     "name": "Call Her Daddy",
+     "status": "resolved",
+     "affinity": 0.754,
+     "popularity": 0.9982,
+     "affinity_rank": 9,
+     "popularity_rank": 4
+    },
+    {
+     "query": "Armchair Expert with Dax Shepard",
+     "name": "Armchair Expert with Dax Shepard",
+     "status": "resolved",
+     "affinity": 0.8185,
+     "popularity": 0.9994,
+     "affinity_rank": 5,
+     "popularity_rank": 2
+    },
+    {
+     "query": "The Joe Rogan Experience",
+     "name": "The Joe Rogan Experience",
+     "status": "resolved",
+     "affinity": 0.8747,
+     "popularity": 0.9914,
+     "affinity_rank": 3,
+     "popularity_rank": 5
+    },
+    {
+     "query": "Huberman Lab",
+     "name": "Huberman Lab",
+     "status": "resolved",
+     "affinity": 0.8912,
+     "popularity": 0.9892,
+     "affinity_rank": 2,
+     "popularity_rank": 6
+    },
+    {
+     "query": "Rotten Mango",
+     "name": "Rotten Mango",
+     "status": "resolved",
+     "affinity": 0.6739,
+     "popularity": 0.984,
+     "affinity_rank": 11,
+     "popularity_rank": 7
+    },
+    {
+     "query": "Bad Friends",
+     "name": "Bad Friends",
+     "status": "resolved",
+     "affinity": 0.7729,
+     "popularity": 0.9827,
+     "affinity_rank": 7,
+     "popularity_rank": 8
+    },
+    {
+     "query": "The Rich Roll Podcast",
+     "name": "The Rich Roll Podcast",
+     "status": "resolved",
+     "affinity": 0.9731,
+     "popularity": 0.9808,
+     "affinity_rank": 1,
+     "popularity_rank": 9
+    },
+    {
+     "query": "The Mel Robbins Podcast",
+     "name": "The Mel Robbins Podcast",
+     "status": "resolved",
+     "affinity": 0.8354,
+     "popularity": 0.9385,
+     "affinity_rank": 4,
+     "popularity_rank": 11
+    },
+    {
+     "query": "KILL TONY",
+     "name": "KILL TONY",
+     "status": "resolved",
+     "affinity": 0.7945,
+     "popularity": 0.9504,
+     "affinity_rank": 6,
+     "popularity_rank": 10
+    },
+    {
+     "query": "Hot Ones",
+     "name": "Two Hot Takes",
+     "status": "needs_review",
+     "affinity": null,
+     "popularity": 0.9738246429955579,
+     "affinity_rank": null,
+     "popularity_rank": null
+    }
+   ],
+   "flagged": [
+    {
+     "query": "Hot Ones",
+     "name": "Two Hot Takes",
+     "status": "needs_review",
+     "affinity": null,
+     "popularity": 0.9738246429955579,
+     "affinity_rank": null,
+     "popularity_rank": null
+    }
+   ],
+   "qloo_shortlist": [
+    {
+     "query": "The Rich Roll Podcast",
+     "name": "The Rich Roll Podcast",
+     "status": "resolved",
+     "affinity": 0.9731,
+     "popularity": 0.9808,
+     "affinity_rank": 1,
+     "popularity_rank": 9
+    },
+    {
+     "query": "Huberman Lab",
+     "name": "Huberman Lab",
+     "status": "resolved",
+     "affinity": 0.8912,
+     "popularity": 0.9892,
+     "affinity_rank": 2,
+     "popularity_rank": 6
+    },
+    {
+     "query": "The Joe Rogan Experience",
+     "name": "The Joe Rogan Experience",
+     "status": "resolved",
+     "affinity": 0.8747,
+     "popularity": 0.9914,
+     "affinity_rank": 3,
+     "popularity_rank": 5
+    }
+   ],
+   "popularity_shortlist": [
+    {
+     "query": "Crime Junkie",
+     "name": "Crime Junkie",
+     "status": "resolved",
+     "affinity": 0.6874,
+     "popularity": 0.9999,
+     "affinity_rank": 10,
+     "popularity_rank": 1
+    },
+    {
+     "query": "Armchair Expert with Dax Shepard",
+     "name": "Armchair Expert with Dax Shepard",
+     "status": "resolved",
+     "affinity": 0.8185,
+     "popularity": 0.9994,
+     "affinity_rank": 5,
+     "popularity_rank": 2
+    },
+    {
+     "query": "SmartLess",
+     "name": "SmartLess",
+     "status": "resolved",
+     "affinity": 0.7663,
+     "popularity": 0.9992,
+     "affinity_rank": 8,
+     "popularity_rank": 3
+    }
+   ],
+   "source_file": "run-20261024T124259-0500-Patagonia.json"
+  }
+ ]
+}

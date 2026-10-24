@@ -13,7 +13,9 @@ short_description: Popularity isn't affinity with your brand (Qloo taste graph)
 
 # CreatorMatch: popularity isn't affinity with your brand
 
-**Live demo:** https://huggingface.co/spaces/igor-eduardo-research/creatormatch · Qloo Agentic Hackathon · MIT
+**Demo:** https://igoreduardoai.github.io/creatormatch/ · Qloo Agentic Hackathon · MIT
+
+The page runs live against Qloo when the serverless backend (`api/run.py`) is connected; until then it shows a clearly dated recorded live run (derived results only).
 
 Brand marketers shortlist creators by reach. CreatorMatch takes the creators you are already considering, asks the
 **Qloo taste graph** how strongly each creator's audience over-indexes on your brand, and puts that next to the
@@ -38,11 +40,14 @@ The ranking is deterministic: Qloo affinity only. Popularity is displayed, never
 ```bash
 pip install -r requirements.txt
 export QLOO_API_KEY=...            # hackathon key; base URL https://hackathon.api.qloo.com
-python app.py                      # web UI on :7860
+python app.py                      # local web UI (Gradio) on :7860
 python agent.py "Liquid Death"     # JSON result in the terminal
 python test_agent.py               # 7 offline tests on synthetic fixtures (no key needed)
 ```
 Optional: `OPENROUTER_API_KEY` lets a free LLM rewrite the brief (guarded: it can't add creators Qloo didn't shortlist).
+
+## Deploy the live backend
+`api/run.py` is a stdlib-only JSON endpoint (`POST {"brand", "creators": [...]}`) with a Vercel-style `handler` class and an AWS Lambda `lambda_handler`. Set `QLOO_API_KEY` as a secret env var, then put the URL in `docs/config.js` (`window.CM_API`).
 
 ## Notes
 - The Qloo key is a server-side secret. The demo caps usage per visitor and per day and caches responses in memory only.
