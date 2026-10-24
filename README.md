@@ -15,7 +15,7 @@ short_description: Popularity isn't affinity with your brand (Qloo taste graph)
 
 **Demo:** https://igoreduardoai.github.io/creatormatch/ · Qloo Agentic Hackathon · MIT
 
-The page runs live against Qloo when the serverless backend (`api/run.py`) is connected; until then it shows a clearly dated recorded live run (derived results only).
+The page runs live against Qloo through the serverless backend (`api/run.py`, deployed on Vercel). Dated recorded runs (derived results only) stay on the page as a fallback.
 
 Brand marketers shortlist creators by reach. CreatorMatch takes the creators you are already considering, asks the
 **Qloo taste graph** how strongly each creator's audience over-indexes on your brand, and puts that next to the
