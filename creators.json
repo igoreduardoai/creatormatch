@@ -1,0 +1,4 @@
+{"_note": "Example creator lists a marketer might bring (public show names only; no Qloo data stored here). Real data is fetched live from Qloo at run time.",
+ "default_pool": ["Crime Junkie", "SmartLess", "Call Her Daddy", "Armchair Expert with Dax Shepard", "The Joe Rogan Experience",
+  "Huberman Lab", "Rotten Mango", "Bad Friends", "The Rich Roll Podcast", "The Mel Robbins Podcast", "KILL TONY", "Hot Ones"],
+ "examples": {"Liquid Death": "default_pool", "Patagonia": "default_pool"}}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.bak-*
+demo-run.json
+runs/
+.env
+*.key
+qloo.txt

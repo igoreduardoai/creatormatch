@@ -1,0 +1,130 @@
+{
+ "_note": "SYNTHETIC offline fixtures for tests only. Not Qloo data: names, ids and numbers are invented.",
+ "search": {
+  "urn:entity:brand|Demo Brand": [
+   {
+    "entity_id": "B-1",
+    "name": "Demo Brand",
+    "popularity": 0.9
+   }
+  ],
+  "urn:entity:podcast|Show Alpha": [
+   {
+    "entity_id": "S-A",
+    "name": "Show Alpha",
+    "popularity": 0.99
+   }
+  ],
+  "urn:entity:podcast|Show Bravo": [
+   {
+    "entity_id": "S-B",
+    "name": "Show Bravo",
+    "popularity": 0.98
+   }
+  ],
+  "urn:entity:podcast|Show Charlie": [
+   {
+    "entity_id": "S-C",
+    "name": "Show Charlie",
+    "popularity": 0.97
+   }
+  ],
+  "urn:entity:podcast|Show Delta": [
+   {
+    "entity_id": "S-D",
+    "name": "Show Delta",
+    "popularity": 0.9
+   }
+  ],
+  "urn:entity:podcast|Show Echo": [
+   {
+    "entity_id": "S-E",
+    "name": "Show Echo",
+    "popularity": 0.85
+   }
+  ],
+  "urn:entity:podcast|Show Foxtrot": [
+   {
+    "entity_id": "S-X",
+    "name": "Totally Different Show",
+    "popularity": 0.99
+   }
+  ]
+ },
+ "insights": {
+  "urn:entity:podcast|B-1": [
+   {
+    "entity_id": "S-D",
+    "name": "Show Delta",
+    "affinity": 0.95,
+    "popularity": 0.9
+   },
+   {
+    "entity_id": "S-N",
+    "name": "Niche Show",
+    "affinity": 0.93,
+    "popularity": 0.6
+   },
+   {
+    "entity_id": "S-E",
+    "name": "Show Echo",
+    "affinity": 0.92,
+    "popularity": 0.85
+   },
+   {
+    "entity_id": "S-C",
+    "name": "Show Charlie",
+    "affinity": 0.8,
+    "popularity": 0.97
+   },
+   {
+    "entity_id": "S-B",
+    "name": "Show Bravo",
+    "affinity": 0.75,
+    "popularity": 0.98
+   },
+   {
+    "entity_id": "S-A",
+    "name": "Show Alpha",
+    "affinity": 0.7,
+    "popularity": 0.99
+   }
+  ],
+  "urn:entity:movie|B-1": [
+   {
+    "entity_id": "T-Film One",
+    "name": "Film One",
+    "affinity": 0.95,
+    "popularity": 0.8
+   },
+   {
+    "entity_id": "T-Film Two",
+    "name": "Film Two",
+    "affinity": 0.9,
+    "popularity": 0.8
+   }
+  ],
+  "urn:entity:movie|S-D": [
+   {
+    "entity_id": "T-Film One",
+    "name": "Film One",
+    "affinity": 0.94,
+    "popularity": 0.8
+   },
+   {
+    "entity_id": "T-Film Three",
+    "name": "Film Three",
+    "affinity": 0.9,
+    "popularity": 0.8
+   }
+  ],
+  "urn:entity:movie|S-A": [
+   {
+    "entity_id": "T-Film Four",
+    "name": "Film Four",
+    "affinity": 0.9,
+    "popularity": 0.8
+   }
+  ]
+ }
+}
